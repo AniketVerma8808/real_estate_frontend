@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+
+  /* COLORS */
+
+  --primary-color: #0F172A;
+  --secondary-color: #C8A96B;
+
+  --background-color: #F8FAFC;
+  --white-color: #FFFFFF;
+
+  --text-color: #1E293B;
+  --paragraph-color: #64748B;
+
+  --border-color: #E2E8F0;
+
+  --hover-color: #0B1120;
+
+  --shadow-color: rgba(0, 0, 0, 0.08);
+
+}
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+/* =========================
+   CUSTOM CONTAINER
+========================= */
+
+.container-custom {
+  max-width: 1280px;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* =========================
+   SECTION SPACING
+========================= */
+
+.section-padding {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn {
+  background: var(--secondary-color);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: var(--primary-color);
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: var(--secondary-color);
+  color: white;
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  color: var(--secondary-color);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card-shadow {
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 20px;
+}
