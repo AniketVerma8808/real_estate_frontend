@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ImageIcon } from "lucide-react";
 
 const galleryImages = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070&auto=format&fit=crop",
-    title: "Premium Township",
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2070&auto=format&fit=crop",
+    title: "Luxury Township",
+    category: "Residential Plots",
     size: "large",
   },
 
@@ -15,31 +16,32 @@ const galleryImages = [
     id: 2,
     image:
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop",
-    title: "Green Landscape",
+    title: "Green Farm Land",
+    category: "Farm Land",
     size: "small",
   },
 
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop",
-    title: "Luxury Plotting",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070&auto=format&fit=crop",
+    title: "Premium Plotting",
+    category: "Investment Zone",
     size: "small",
   },
 
   {
     id: 4,
     image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2070&auto=format&fit=crop",
-    title: "Smart Investment Zone",
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop",
+    title: "Future Smart City",
+    category: "Township Development",
     size: "large",
   },
 ];
 
 const GalleryPreview = () => {
-
   return (
-
     <section
       className="
         relative
@@ -47,32 +49,46 @@ const GalleryPreview = () => {
         overflow-hidden
       "
       style={{
-        background: "var(--background-color)",
+        background: "var(--primary-color)",
       }}
     >
-
       {/* ======================
-          BACKGROUND GLOW
+          BACKGROUND EFFECTS
       ====================== */}
 
       <div
         className="
           absolute
-          top-0
-          right-0
-          w-[300px]
-          h-[300px]
+          top-[-100px]
+          right-[-100px]
+          w-[320px]
+          h-[320px]
           rounded-full
-          blur-[140px]
-          opacity-10
+          blur-[150px]
+          opacity-20
         "
         style={{
           background: "var(--secondary-color)",
         }}
       />
 
-      <div className="container-custom relative z-10">
+      <div
+        className="
+          absolute
+          bottom-[-120px]
+          left-[-100px]
+          w-[300px]
+          h-[300px]
+          rounded-full
+          blur-[150px]
+          opacity-10
+        "
+        style={{
+          background: "#ffffff",
+        }}
+      />
 
+      <div className="container-custom relative z-10">
         {/* ======================
             SECTION HEADER
         ====================== */}
@@ -92,11 +108,9 @@ const GalleryPreview = () => {
             mb-20
           "
         >
-
           {/* LEFT */}
 
           <div>
-
             <div
               className="
                 inline-flex
@@ -107,14 +121,14 @@ const GalleryPreview = () => {
                 rounded-full
                 border
                 mb-7
+                backdrop-blur-xl
               "
               style={{
-                borderColor: "rgba(15,23,42,0.08)",
-                color: "var(--primary-color)",
-                background: "rgba(255,255,255,0.7)",
+                borderColor: "rgba(255,255,255,0.1)",
+                background: "rgba(255,255,255,0.04)",
+                color: "var(--white-color)",
               }}
             >
-
               <span
                 className="
                   w-2
@@ -127,49 +141,50 @@ const GalleryPreview = () => {
               />
 
               Project Gallery
-
             </div>
 
             <h2
               className="
                 text-[40px]
-                md:text-[55px]
-                leading-[1.1]
+                md:text-[58px]
+                leading-[1.05]
                 font-bold
                 tracking-[-2px]
-                max-w-[700px]
+                max-w-[780px]
               "
               style={{
-                color: "var(--primary-color)",
+                color: "var(--white-color)",
               }}
             >
-
-              Explore Our
-              Premium Plotting Projects
-
+              A Glimpse Of
+              <span
+                style={{
+                  color: "var(--secondary-color)",
+                }}
+              >
+                {" "}
+                Premium{" "}
+              </span>
+              Plotting & Future Living Spaces
             </h2>
-
           </div>
 
           {/* RIGHT */}
 
           <p
             className="
-              max-w-[450px]
+              max-w-[480px]
               text-[16px]
               leading-8
             "
             style={{
-              color: "var(--paragraph-color)",
+              color: "rgba(255,255,255,0.72)",
             }}
           >
-
-            Experience thoughtfully designed township
-            developments with modern infrastructure,
-            greenery, and future-ready investment spaces.
-
+            Explore modern township developments, green landscapes,
+            investment-ready plots, and premium infrastructure crafted for
+            long-term growth and luxurious living.
           </p>
-
         </motion.div>
 
         {/* ======================
@@ -184,146 +199,189 @@ const GalleryPreview = () => {
             gap-8
           "
         >
+          {galleryImages.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: index * 0.12,
+                duration: 0.7,
+              }}
+              whileHover={{
+                y: -10,
+              }}
+              className={`
+                group
+                relative
+                overflow-hidden
+                rounded-[36px]
+                border
+                ${
+                  item.size === "large"
+                    ? "h-[620px]"
+                    : "h-[430px]"
+                }
+              `}
+              style={{
+                borderColor: "rgba(255,255,255,0.08)",
+                background: "rgba(255,255,255,0.03)",
+              }}
+            >
+              {/* IMAGE */}
 
-          {
-            galleryImages.map((item, index) => (
+              <img
+                src={item.image}
+                alt={item.title}
+                className="
+                  w-full
+                  h-full
+                  object-cover
+                  transition-all
+                  duration-700
+                  group-hover:scale-110
+                "
+              />
 
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.12,
-                  duration: 0.7,
+              {/* DARK OVERLAY */}
+
+              <div
+                className="
+                  absolute
+                  inset-0
+                "
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(2,6,23,0.95), rgba(2,6,23,0.35), transparent)",
                 }}
-                whileHover={{
-                  y: -8,
+              />
+
+              {/* GOLD SHINE EFFECT */}
+
+              <div
+                className="
+                  absolute
+                  inset-0
+                  opacity-0
+                  group-hover:opacity-100
+                  transition-all
+                  duration-700
+                "
+                style={{
+                  background:
+                    "linear-gradient(120deg, transparent 20%, rgba(200,169,107,0.15), transparent 80%)",
                 }}
-                className={`
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-[35px]
-                  ${item.size === "large"
-                    ? "h-[600px]"
-                    : "h-[420px]"
-                  }
-                `}
+              />
+
+              {/* TOP BADGE */}
+
+              <div
+                className="
+                  absolute
+                  top-6
+                  left-6
+                  px-4
+                  py-2
+                  rounded-full
+                  flex
+                  items-center
+                  gap-2
+                  backdrop-blur-xl
+                "
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  color: "white",
+                }}
               >
+                <ImageIcon size={16} />
 
-                {/* IMAGE */}
+                <span className="text-sm">
+                  {item.category}
+                </span>
+              </div>
 
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="
-                    w-full
-                    h-full
-                    object-cover
-                    transition-all
-                    duration-700
-                    group-hover:scale-110
-                  "
-                />
+              {/* CONTENT */}
 
-                {/* OVERLAY */}
+              <div
+                className="
+                  absolute
+                  bottom-0
+                  left-0
+                  w-full
+                  p-8
+                  flex
+                  items-end
+                  justify-between
+                  gap-6
+                "
+              >
+                {/* LEFT */}
 
-                <div
-                  className="
-                    absolute
-                    inset-0
-                  "
-                  style={{
-                    background:
-                      "linear-gradient(to top, rgba(15,23,42,0.92), transparent 60%)",
-                  }}
-                />
-
-                {/* CONTENT */}
-
-                <div
-                  className="
-                    absolute
-                    bottom-0
-                    left-0
-                    w-full
-                    p-8
-                    flex
-                    items-end
-                    justify-between
-                  "
-                >
-
-                  <div>
-
-                    <p
-                      className="
-                        text-sm
-                        mb-3
-                      "
-                      style={{
-                        color: "rgba(255,255,255,0.7)",
-                      }}
-                    >
-                      Premium Development
-                    </p>
-
-                    <h3
-                      className="
-                        text-3xl
-                        font-bold
-                      "
-                      style={{
-                        color: "var(--white-color)",
-                      }}
-                    >
-
-                      {item.title}
-
-                    </h3>
-
-                  </div>
-
-                  {/* BUTTON */}
-
-                  <motion.button
-                    whileHover={{
-                      rotate: 45,
-                    }}
+                <div>
+                  <p
                     className="
-                      w-14
-                      h-14
-                      rounded-full
-                      flex
-                      items-center
-                      justify-center
+                      text-sm
+                      mb-3
+                      tracking-[2px]
+                      uppercase
                     "
                     style={{
-                      background: "var(--secondary-color)",
-                      color: "white",
+                      color: "rgba(255,255,255,0.65)",
                     }}
                   >
+                    Premium Development
+                  </p>
 
-                    <ArrowUpRight size={22} />
-
-                  </motion.button>
-
+                  <h3
+                    className="
+                      text-[30px]
+                      md:text-[36px]
+                      leading-tight
+                      font-bold
+                    "
+                    style={{
+                      color: "var(--white-color)",
+                    }}
+                  >
+                    {item.title}
+                  </h3>
                 </div>
 
-              </motion.div>
+                {/* BUTTON */}
 
-            ))
-          }
-
+                <motion.button
+                  whileHover={{
+                    rotate: 45,
+                    scale: 1.08,
+                  }}
+                  whileTap={{
+                    scale: 0.95,
+                  }}
+                  className="
+                    min-w-[60px]
+                    h-[60px]
+                    rounded-full
+                    flex
+                    items-center
+                    justify-center
+                    shadow-2xl
+                  "
+                  style={{
+                    background: "var(--secondary-color)",
+                    color: "white",
+                  }}
+                >
+                  <ArrowUpRight size={24} />
+                </motion.button>
+              </div>
+            </motion.div>
+          ))}
         </div>
-
       </div>
-
     </section>
-
   );
-
 };
 
 export default GalleryPreview;
