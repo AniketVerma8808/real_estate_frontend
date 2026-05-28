@@ -75,42 +75,61 @@ const Navbar = () => {
           <Link to="/">
             <motion.div
               whileHover={{
-                scale: 1.03,
+                scale: 1.02,
               }}
-              className="flex items-center gap-3"
+              className="flex items-center gap-4"
             >
-              {/* IMAGE LOGO */}
+              {/* LOGO IMAGE */}
 
               <div
                 className="
-                  w-[60px]
-                  h-[60px]
-                  rounded-2xl
-                  overflow-hidden
-                  bg-white
-                  shadow-xl
-                  border
-                  border-white/20
-                "
+        relative
+        w-[58px]
+        h-[58px]
+        md:w-[64px]
+        md:h-[64px]
+        rounded-2xl
+        overflow-hidden
+        bg-white/10
+        backdrop-blur-xl
+        border
+        border-white/10
+        shadow-[0_10px_30px_rgba(0,0,0,0.25)]
+        shrink-0
+      "
               >
                 <img
                   src="logo.jpeg"
                   alt="Ujjwal Bhoomi Logo"
                   className="w-full h-full object-cover"
                 />
+
+                {/* OPTIONAL GLOW */}
+
+                <div
+                  className="
+          absolute
+          inset-0
+          bg-gradient-to-tr
+          from-white/10
+          to-transparent
+          pointer-events-none
+        "
+                />
               </div>
 
               {/* TEXT */}
 
-              <div className="hidden sm:block">
+              <div className="flex flex-col">
                 <h1
                   className="
-                    text-[22px]
-                    md:text-[26px]
-                    font-bold
-                    leading-tight
-                    tracking-wide
-                  "
+          text-[20px]
+          sm:text-[24px]
+          md:text-[26px]
+          font-bold
+          leading-none
+          tracking-[0.5px]
+        "
                   style={{
                     color: "var(--white-color)",
                   }}
@@ -120,21 +139,22 @@ const Navbar = () => {
 
                 <p
                   className="
-                    text-[11px]
-                    // uppercase
-                    tracking-[3px]
-                    mt-1
-                  "
+          mt-2
+          text-[10px]
+          sm:text-[11px]
+          uppercase
+          tracking-[4px]
+          font-medium
+        "
                   style={{
-                    color: "rgba(255,255,255,0.7)",
+                    color: "rgba(255,255,255,0.65)",
                   }}
                 >
-                  Real Estate pvt. ltd.
+                  Real Estate Pvt. Ltd.
                 </p>
               </div>
             </motion.div>
           </Link>
-
           {/* DESKTOP MENU */}
 
           <nav className="hidden lg:flex items-center gap-10">
