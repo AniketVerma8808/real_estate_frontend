@@ -126,9 +126,12 @@ const FeaturedProjects = () => {
 
             <h2
               className="
-                text-[40px]
-                md:text-[55px]
-                leading-[1.1]
+
+text-[30px]
+sm:text-[36px]
+md:text-[44px]
+lg:text-[52px]
+              leading-[1.1]
                 font-bold
                 tracking-[-2px]
                 max-w-[700px]
@@ -287,7 +290,8 @@ const FeaturedProjects = () => {
 
                   <h3
                     className="
-                        text-3xl
+                        text-[24px]
+                        md:text-[28px]
                         font-bold
                         leading-tight
                       "

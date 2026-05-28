@@ -132,3 +132,47 @@ body {
   background: var(--secondary-color);
   border-radius: 20px;
 }
+/* =========================
+   RESPONSIVE TYPOGRAPHY
+========================= */
+
+@media (max-width: 992px) {
+
+  .section-title {
+    font-size: 40px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .container-custom {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .section-title {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+}

@@ -1,25 +1,63 @@
 import { motion } from "framer-motion";
 
-import { MoveRight, Play } from "lucide-react";
+import {
+  MoveRight,
+  Play,
+  ChevronDown,
+  ShieldCheck,
+  MapPinned,
+  Landmark,
+} from "lucide-react";
+
+const trustPoints = [
+  {
+    icon: ShieldCheck,
+    text: "RERA Approved",
+  },
+
+  {
+    icon: Landmark,
+    text: "Bank Loan Available",
+  },
+
+  {
+    icon: MapPinned,
+    text: "Prime Township Locations",
+  },
+];
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden pt-[110px] lg:pt-0">
+    <section
+      className="
+        relative
+        min-h-[92vh]
+        overflow-hidden
+        flex
+        items-center
+      "
+    >
       {/* ======================
           BACKGROUND IMAGE
       ====================== */}
 
       <motion.img
         initial={{ scale: 1 }}
-        animate={{ scale: 1.1 }}
+        animate={{ scale: 1.06 }}
         transition={{
           duration: 12,
           repeat: Infinity,
           repeatType: "reverse",
         }}
-        src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070&auto=format&fit=crop"
-        alt="Luxury Real Estate"
-        className="absolute inset-0 w-full h-full object-cover"
+        src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2070&auto=format&fit=crop"
+        alt="Premium Township"
+        className="
+          absolute
+          inset-0
+          w-full
+          h-full
+          object-cover
+        "
       />
 
       {/* ======================
@@ -30,7 +68,7 @@ const HeroSection = () => {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(15,23,42,0.95), rgba(15,23,42,0.65), rgba(15,23,42,0.35))",
+            "linear-gradient(to right, rgba(15,23,42,0.96), rgba(15,23,42,0.78), rgba(15,23,42,0.45))",
         }}
       />
 
@@ -41,13 +79,13 @@ const HeroSection = () => {
       <div
         className="
           absolute
-          top-[15%]
-          left-[5%]
-          w-[300px]
-          h-[300px]
+          top-[10%]
+          left-[0%]
+          w-[260px]
+          h-[260px]
           rounded-full
           blur-[120px]
-          opacity-30
+          opacity-20
         "
         style={{
           background: "var(--secondary-color)",
@@ -57,13 +95,13 @@ const HeroSection = () => {
       <div
         className="
           absolute
-          bottom-[10%]
-          right-[10%]
-          w-[250px]
-          h-[250px]
+          bottom-[5%]
+          right-[0%]
+          w-[220px]
+          h-[220px]
           rounded-full
           blur-[120px]
-          opacity-20
+          opacity-10
         "
         style={{
           background: "#ffffff",
@@ -71,117 +109,140 @@ const HeroSection = () => {
       />
 
       {/* ======================
-          HERO CONTENT
+          MAIN CONTENT
       ====================== */}
 
-      <div className="relative z-10 min-h-screen flex items-center pt-32 pb-10">
-        <div className="container-custom grid lg:grid-cols-2 gap-16 items-center">
+      <div
+        className="
+          relative
+          z-10
+          w-full
+          pt-[130px]
+          pb-16
+          lg:pt-[120px]
+        "
+      >
+        <div
+          className="
+            container-custom
+            grid
+            lg:grid-cols-2
+            gap-14
+            items-center
+          "
+        >
           {/* ======================
-              LEFT CONTENT
+              LEFT SIDE
           ====================== */}
 
           <div>
             {/* TAG */}
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.6 }}
               className="
                 inline-flex
                 items-center
                 gap-3
                 px-5
-                py-2
+                py-2.5
                 rounded-full
                 border
-                mb-8
                 backdrop-blur-md
+                mb-7
               "
               style={{
-                borderColor: "rgba(255,255,255,0.15)",
+                borderColor: "rgba(255,255,255,0.12)",
                 background: "rgba(255,255,255,0.05)",
                 color: "var(--white-color)",
               }}
             >
               <span
-                className="w-2 h-2 rounded-full"
+                className="
+                  w-2
+                  h-2
+                  rounded-full
+                "
                 style={{
                   background: "var(--secondary-color)",
                 }}
               />
-              Premium Real Estate Company
+              Premium Plotting Projects
             </motion.div>
 
             {/* HEADING */}
 
             <motion.h1
-              initial={{ opacity: 0, y: 80 }}
+              initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 1,
+                duration: 0.9,
               }}
               className="
-                text-[42px]
-                sm:text-[60px]
-                lg:text-[78px]
-                leading-[1.05]
+                text-[38px]
+                sm:text-[52px]
+                lg:text-[68px]
+                leading-[1.08]
                 font-bold
-                tracking-[-3px]
-                max-w-[800px]
+                tracking-[-1px]
+                lg:tracking-[-2px]
+                max-w-[720px]
               "
               style={{
                 color: "var(--white-color)",
               }}
             >
-              Find The
+              Invest In
               <span
                 style={{
                   color: "var(--secondary-color)",
                 }}
               >
                 {" "}
-                Perfect{" "}
+                Verified Land{" "}
               </span>
-              Place To Build Your Dream
+             With Assured Future Appreciation
             </motion.h1>
 
             {/* DESCRIPTION */}
 
             <motion.p
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                delay: 0.3,
+                delay: 0.2,
               }}
               className="
-                mt-8
-                text-[17px]
+                mt-7
+                text-[15px]
+                sm:text-[16px]
                 leading-8
-                max-w-[650px]
+                max-w-[620px]
               "
               style={{
-                color: "rgba(255,255,255,0.75)",
+                color: "rgba(255,255,255,0.72)",
               }}
             >
-              Explore luxury plots, villas, and premium commercial spaces with
-              modern amenities, strategic locations, and trusted investment
-              opportunities.
+              Discover premium gated plotting developments and smart township
+              projects with modern infrastructure, strategic locations, and
+              secure investment opportunities for the future.
             </motion.p>
 
             {/* BUTTONS */}
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                delay: 0.5,
+                delay: 0.4,
               }}
               className="
                 flex
                 flex-wrap
                 items-center
-                gap-5
+                gap-4
                 mt-10
               "
             >
@@ -189,7 +250,7 @@ const HeroSection = () => {
 
               <motion.button
                 whileHover={{
-                  scale: 1.05,
+                  scale: 1.03,
                 }}
                 whileTap={{
                   scale: 0.95,
@@ -197,14 +258,16 @@ const HeroSection = () => {
                 className="
                   flex
                   items-center
+                  justify-center
                   gap-3
-                  px-8
-                  py-4
+                  px-7
+                  py-3.5
                   rounded-full
+                  text-[15px]
                   font-semibold
+                  shadow-2xl
                   transition-all
                   duration-300
-                  shadow-2xl
                 "
                 style={{
                   background: "var(--secondary-color)",
@@ -212,14 +275,14 @@ const HeroSection = () => {
                 }}
               >
                 Explore Projects
-                <MoveRight size={20} />
+                <MoveRight size={18} />
               </motion.button>
 
               {/* SECONDARY BUTTON */}
 
               <motion.button
                 whileHover={{
-                  scale: 1.05,
+                  scale: 1.03,
                 }}
                 whileTap={{
                   scale: 0.95,
@@ -227,75 +290,94 @@ const HeroSection = () => {
                 className="
                   flex
                   items-center
+                  justify-center
                   gap-3
-                  px-8
-                  py-4
+                  px-7
+                  py-3.5
                   rounded-full
                   border
                   backdrop-blur-md
+                  text-[15px]
                   transition-all
                   duration-300
                   hover:bg-white/10
                 "
                 style={{
-                  borderColor: "rgba(255,255,255,0.2)",
+                  borderColor: "rgba(255,255,255,0.14)",
+                  background: "rgba(255,255,255,0.04)",
                   color: "var(--white-color)",
                 }}
               >
-                <Play size={18} />
+                <Play size={17} />
                 Watch Video
               </motion.button>
             </motion.div>
 
-            {/* STATS */}
+            {/* TRUST POINTS */}
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
-                delay: 0.7,
+                delay: 0.6,
               }}
               className="
                 flex
                 flex-wrap
-                gap-10
-                mt-16
+                items-center
+                gap-5
+                mt-14
               "
             >
-              {[
-                {
-                  number: "500+",
-                  label: "Happy Clients",
-                },
-                {
-                  number: "20+",
-                  label: "Premium Projects",
-                },
-                {
-                  number: "10+",
-                  label: "Years Experience",
-                },
-              ].map((item, index) => (
-                <div key={index}>
-                  <h2
-                    className="text-4xl font-bold"
-                    style={{
-                      color: "var(--secondary-color)",
-                    }}
-                  >
-                    {item.number}
-                  </h2>
+              {trustPoints.map((item, index) => {
+                const Icon = item.icon;
 
-                  <p
-                    className="mt-2"
-                    style={{
-                      color: "rgba(255,255,255,0.7)",
-                    }}
+                return (
+                  <div
+                    key={index}
+                    className="
+                      flex
+                      items-center
+                      gap-3
+                    "
                   >
-                    {item.label}
-                  </p>
-                </div>
-              ))}
+                    <div
+                      className="
+                        w-10
+                        h-10
+                        rounded-full
+                        flex
+                        items-center
+                        justify-center
+                        backdrop-blur-md
+                      "
+                      style={{
+                        background: "rgba(255,255,255,0.08)",
+                        border: "1px solid rgba(255,255,255,0.08)",
+                      }}
+                    >
+                      <Icon
+                        size={18}
+                        style={{
+                          color: "var(--secondary-color)",
+                        }}
+                      />
+                    </div>
+
+                    <p
+                      className="
+                        text-[14px]
+                        md:text-[15px]
+                      "
+                      style={{
+                        color: "rgba(255,255,255,0.82)",
+                      }}
+                    >
+                      {item.text}
+                    </p>
+                  </div>
+                );
+              })}
             </motion.div>
           </div>
 
@@ -304,99 +386,216 @@ const HeroSection = () => {
           ====================== */}
 
           <motion.div
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
               duration: 1,
             }}
-            className="hidden lg:flex justify-end"
+            className="
+              hidden
+              lg:flex
+              justify-end
+            "
           >
             <div
               className="
-                w-[420px]
-                p-8
+                relative
+                w-[390px]
+                overflow-hidden
                 rounded-[32px]
-                backdrop-blur-xl
                 border
-                shadow-2xl
+                backdrop-blur-xl
+                p-6
               "
               style={{
                 background: "rgba(255,255,255,0.08)",
-                borderColor: "rgba(255,255,255,0.12)",
+                borderColor: "rgba(255,255,255,0.1)",
               }}
             >
-              <h3
-                className="text-3xl font-bold"
-                style={{
-                  color: "var(--white-color)",
-                }}
+              {/* IMAGE */}
+
+              <div
+                className="
+                  relative
+                  h-[240px]
+                  overflow-hidden
+                  rounded-[24px]
+                "
               >
-                Premium Living
-              </h3>
+                <img
+                  src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+                  alt="Luxury Township"
+                  className="
+                    w-full
+                    h-full
+                    object-cover
+                  "
+                />
 
-              <p
-                className="mt-4 leading-7"
-                style={{
-                  color: "rgba(255,255,255,0.7)",
-                }}
-              >
-                Discover luxury lifestyle spaces designed with world-class
-                infrastructure and future-ready investment opportunities.
-              </p>
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(15,23,42,0.75), transparent)",
+                  }}
+                />
 
-              {/* FEATURES */}
-
-              <div className="mt-10 space-y-5">
-                {[
-                  "Luxury Villas",
-                  "Premium Plots",
-                  "Smart Township",
-                  "24/7 Security",
-                ].map((item, index) => (
-                  <motion.div
-                    whileHover={{
-                      x: 8,
-                    }}
-                    key={index}
+                <div
+                  className="
+                    absolute
+                    bottom-5
+                    left-5
+                  "
+                >
+                  <p
                     className="
-                        flex
-                        items-center
-                        gap-4
-                        p-4
-                        rounded-2xl
-                        transition-all
-                        duration-300
-                      "
+                      text-sm
+                      mb-2
+                    "
                     style={{
-                      background: "rgba(255,255,255,0.05)",
+                      color: "rgba(255,255,255,0.75)",
                     }}
                   >
-                    <div
-                      className="
-                          w-3
-                          h-3
-                          rounded-full
-                        "
-                      style={{
-                        background: "var(--secondary-color)",
-                      }}
-                    />
+                    Featured Township
+                  </p>
 
-                    <p
+                  <h3
+                    className="
+                      text-2xl
+                      font-bold
+                    "
+                    style={{
+                      color: "var(--white-color)",
+                    }}
+                  >
+                    Smart Premium City
+                  </h3>
+                </div>
+              </div>
+
+              {/* CONTENT */}
+
+              <div className="mt-6">
+                <h3
+                  className="
+                    text-[26px]
+                    font-bold
+                    leading-tight
+                  "
+                  style={{
+                    color: "var(--white-color)",
+                  }}
+                >
+                  Secure Your Future Through Smart Investments
+                </h3>
+
+                <p
+                  className="
+                    mt-4
+                    text-[15px]
+                    leading-7
+                  "
+                  style={{
+                    color: "rgba(255,255,255,0.72)",
+                  }}
+                >
+                  Premium plotting developments with modern infrastructure,
+                  excellent connectivity, and future-ready investment growth.
+                </p>
+
+                {/* MINI FEATURES */}
+
+                <div
+                  className="
+                    grid
+                    grid-cols-2
+                    gap-4
+                    mt-7
+                  "
+                >
+                  {[
+                    "Starting From ₹999/Sq.Ft",
+                    "200+ Acres Township",
+                    "Registry Available",
+                    "Bank Loan Assistance",
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className="
+                        p-4
+                        rounded-2xl
+                        text-center
+                      "
                       style={{
-                        color: "var(--white-color)",
+                        background: "rgba(255,255,255,0.05)",
+                        border: "1px solid rgba(255,255,255,0.06)",
                       }}
                     >
-                      {item}
-                    </p>
-                  </motion.div>
-                ))}
+                      <p
+                        className="
+                          text-[14px]
+                          font-medium
+                        "
+                        style={{
+                          color: "rgba(255,255,255,0.88)",
+                        }}
+                      >
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
 
+      {/* ======================
+          SCROLL INDICATOR
+      ====================== */}
+
+      <motion.div
+        animate={{
+          y: [0, 10, 0],
+        }}
+        transition={{
+          duration: 1.8,
+          repeat: Infinity,
+        }}
+        className="
+          absolute
+          bottom-6
+          right-6
+          hidden
+          lg:flex
+          flex-col
+          items-center
+          gap-3
+          z-20
+        "
+      >
+        <p
+          className="
+            text-[11px]
+            uppercase
+            tracking-[4px]
+            rotate-90
+          "
+          style={{
+            color: "rgba(255,255,255,0.7)",
+          }}
+        >
+          Scroll
+        </p>
+
+        <ChevronDown
+          size={18}
+          style={{
+            color: "var(--secondary-color)",
+          }}
+        />
+      </motion.div>
     </section>
   );
 };

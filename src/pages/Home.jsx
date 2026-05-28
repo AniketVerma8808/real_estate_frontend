@@ -1,8 +1,12 @@
+import AboutSection from "../components/home/AboutSection";
 import AmenitiesSection from "../components/home/AmenitiesSection";
-// import FAQSection from "../components/home/FAQSection";
+import CTASection from "../components/home/CTASection";
+import FAQSection from "../components/home/FAQSection";
 import FeaturedProjects from "../components/home/FeaturedProjects";
 import GalleryPreview from "../components/home/GalleryPreview";
 import HeroSection from "../components/home/HeroSection";
+import HowItWorksSection from "../components/home/HowItWorksSection";
+import StatsSection from "../components/home/StatsSection";
 import Testimonials from "../components/home/Testimonials";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 
@@ -10,12 +14,21 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-      <FeaturedProjects/>
-      <WhyChooseUs/>
-      <AmenitiesSection/>
-      <GalleryPreview/>
-      <Testimonials/>
-      {/* <FAQSection/> */}
+
+      <StatsSection />
+      <AboutSection />
+      <FeaturedProjects />
+
+      <WhyChooseUs />
+
+      <HowItWorksSection />
+
+      <GalleryPreview />
+
+      <Testimonials />
+
+
+      <CTASection />
     </>
   );
 };

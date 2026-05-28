@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-
 import {
   Trees,
   ShieldCheck,
@@ -16,31 +15,26 @@ const amenities = [
     title: "Green Parks",
     desc: "Beautiful landscaped parks and open green spaces for peaceful living.",
   },
-
   {
     icon: ShieldCheck,
     title: "24/7 Security",
     desc: "Gated township with modern security systems and surveillance support.",
   },
-
   {
     icon: Waves,
     title: "Water Supply",
     desc: "Continuous water availability with proper underground pipeline systems.",
   },
-
   {
     icon: CarFront,
     title: "Wide Roads",
     desc: "Well-planned 30ft & 40ft wide roads for smooth and premium connectivity.",
   },
-
   {
     icon: Lightbulb,
     title: "Street Lighting",
     desc: "Modern street lighting infrastructure for safety and convenience.",
   },
-
   {
     icon: Building2,
     title: "Commercial Zone",
@@ -49,23 +43,14 @@ const amenities = [
 ];
 
 const AmenitiesSection = () => {
-
   return (
-
     <section
-      className="
-        relative
-        py-28
-        overflow-hidden
-      "
+      className="py-24 lg:py-28 relative overflow-hidden"
       style={{
         background: "var(--primary-color)",
       }}
     >
-
-      {/* ======================
-          BACKGROUND GLOW
-      ====================== */}
+      {/* Background Glow */}
 
       <div
         className="
@@ -84,30 +69,98 @@ const AmenitiesSection = () => {
       />
 
       <div className="container-custom relative z-10">
-
-        {/* ======================
-            TOP CONTENT
-        ====================== */}
-
         <div
           className="
             grid
             lg:grid-cols-2
-            gap-16
+            gap-14
+            lg:gap-20
             items-center
-            mb-20
           "
         >
-
-          {/* LEFT */}
+          {/* LEFT IMAGE */}
 
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative"
+          >
+            <div
+              className="
+                overflow-hidden
+                rounded-[32px]
+                border
+              "
+              style={{
+                borderColor: "rgba(255,255,255,0.08)",
+              }}
+            >
+              <img
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop"
+                alt="Amenities"
+                className="
+                  w-full
+                  h-[420px]
+                  md:h-[550px]
+                  object-cover
+                "
+              />
+            </div>
+
+            {/* Floating Card */}
+
+            <div
+              className="
+                absolute
+                bottom-6
+                left-6
+                p-5
+                rounded-[22px]
+                border
+                backdrop-blur-xl
+              "
+              style={{
+                background: "rgba(15,23,42,0.82)",
+                borderColor: "rgba(255,255,255,0.08)",
+              }}
+            >
+              <h3
+                className="
+                  text-[34px]
+                  font-bold
+                  leading-none
+                "
+                style={{
+                  color: "var(--secondary-color)",
+                }}
+              >
+                25+
+              </h3>
+
+              <p
+                className="
+                  mt-2
+                  text-[14px]
+                "
+                style={{
+                  color: "rgba(255,255,255,0.72)",
+                }}
+              >
+                Modern Lifestyle Amenities
+              </p>
+            </div>
+          </motion.div>
+
+          {/* RIGHT CONTENT */}
+
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-
             {/* TAG */}
 
             <div
@@ -119,338 +172,184 @@ const AmenitiesSection = () => {
                 py-2
                 rounded-full
                 border
-                mb-8
+                mb-7
               "
               style={{
                 borderColor: "rgba(255,255,255,0.1)",
+                background: "rgba(255,255,255,0.04)",
                 color: "var(--white-color)",
-                background: "rgba(255,255,255,0.03)",
               }}
             >
-
               <span
-                className="
-                  w-2
-                  h-2
-                  rounded-full
-                "
+                className="w-2 h-2 rounded-full"
                 style={{
                   background: "var(--secondary-color)",
                 }}
               />
 
               Premium Township Amenities
-
             </div>
 
-            {/* HEADING */}
+            {/* TITLE */}
 
             <h2
               className="
-                text-[40px]
-                md:text-[55px]
-                leading-[1.1]
+                text-[34px]
+                md:text-[48px]
                 font-bold
-                tracking-[-2px]
-                max-w-[700px]
+                leading-[1.15]
+                tracking-[-1px]
               "
               style={{
                 color: "var(--white-color)",
               }}
             >
-
-              Modern Infrastructure
-              For Comfortable Living
-
+              Modern Infrastructure For
+              <span
+                style={{
+                  color: "var(--secondary-color)",
+                }}
+              >
+                {" "}
+                Comfortable Living
+              </span>
             </h2>
 
             {/* DESCRIPTION */}
 
             <p
               className="
-                mt-7
-                text-[16px]
+                mt-6
+                text-[15px]
+                md:text-[16px]
                 leading-8
-                max-w-[650px]
+                max-w-[620px]
               "
               style={{
                 color: "rgba(255,255,255,0.72)",
               }}
             >
-
-              Our plotting projects are designed with
-              premium infrastructure, green surroundings,
-              and modern facilities that ensure a secure,
-              comfortable, and future-ready lifestyle.
-
+              Our plotting developments feature premium infrastructure,
+              landscaped surroundings, wide roads, and essential facilities
+              designed to provide a secure and future-ready lifestyle.
             </p>
+
+            {/* AMENITIES LIST */}
+
+            <div
+              className="
+                grid
+                sm:grid-cols-2
+                gap-5
+                mt-10
+              "
+            >
+              {amenities.map((item, index) => {
+                const Icon = item.icon;
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: index * 0.08,
+                      duration: 0.5,
+                    }}
+                    className="
+                      flex
+                      items-start
+                      gap-4
+                      p-5
+                      rounded-[22px]
+                      border
+                    "
+                    style={{
+                      background: "rgba(255,255,255,0.04)",
+                      borderColor: "rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    <div
+                      className="
+                        min-w-[48px]
+                        h-[48px]
+                        rounded-xl
+                        flex
+                        items-center
+                        justify-center
+                      "
+                      style={{
+                        background: "rgba(200,169,107,0.12)",
+                        color: "var(--secondary-color)",
+                      }}
+                    >
+                      <Icon size={22} />
+                    </div>
+
+                    <div>
+                      <h3
+                        className="
+                          text-[18px]
+                          font-semibold
+                        "
+                        style={{
+                          color: "var(--white-color)",
+                        }}
+                      >
+                        {item.title}
+                      </h3>
+
+                      <p
+                        className="
+                          mt-2
+                          text-[14px]
+                          leading-7
+                        "
+                        style={{
+                          color: "rgba(255,255,255,0.68)",
+                        }}
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
 
             {/* BUTTON */}
 
             <motion.button
               whileHover={{
-                scale: 1.05,
+                scale: 1.04,
               }}
               whileTap={{
                 scale: 0.95,
               }}
               className="
                 mt-10
-                flex
+                inline-flex
                 items-center
                 gap-3
-                px-8
+                px-7
                 py-4
                 rounded-full
                 font-semibold
-                w-fit
               "
               style={{
                 background: "var(--secondary-color)",
-                color: "white",
+                color: "#fff",
               }}
             >
-
               Explore Amenities
-
-              <ArrowRight size={20} />
-
+              <ArrowRight size={18} />
             </motion.button>
-
           </motion.div>
-
-          {/* RIGHT IMAGE */}
-
-          <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-
-            <div
-              className="
-                overflow-hidden
-                rounded-[35px]
-                border
-              "
-              style={{
-                borderColor: "rgba(255,255,255,0.08)",
-              }}
-            >
-
-              <img
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop"
-                alt="Amenities"
-                className="
-                  w-full
-                  h-[600px]
-                  object-cover
-                "
-              />
-
-            </div>
-
-            {/* FLOATING CARD */}
-
-            <motion.div
-              animate={{
-                y: [0, -10, 0],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-              }}
-              className="
-                absolute
-                bottom-8
-                right-8
-                p-6
-                rounded-[28px]
-                border
-                backdrop-blur-xl
-                max-w-[260px]
-              "
-              style={{
-                background: "rgba(15,23,42,0.78)",
-                borderColor: "rgba(255,255,255,0.08)",
-              }}
-            >
-
-              <h3
-                className="
-                  text-4xl
-                  font-bold
-                "
-                style={{
-                  color: "var(--secondary-color)",
-                }}
-              >
-                25+
-              </h3>
-
-              <p
-                className="
-                  mt-3
-                  leading-7
-                "
-                style={{
-                  color: "rgba(255,255,255,0.72)",
-                }}
-              >
-
-                Premium amenities designed for modern
-                township and smart living experiences.
-
-              </p>
-
-            </motion.div>
-
-          </motion.div>
-
         </div>
-
-        {/* ======================
-            AMENITIES GRID
-        ====================== */}
-
-        <div
-          className="
-            grid
-            sm:grid-cols-2
-            lg:grid-cols-3
-            gap-8
-          "
-        >
-
-          {
-            amenities.map((item, index) => {
-
-              const Icon = item.icon;
-
-              return (
-
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: index * 0.1,
-                    duration: 0.6,
-                  }}
-                  whileHover={{
-                    y: -10,
-                  }}
-                  className="
-                    relative
-                    p-8
-                    rounded-[30px]
-                    border
-                    overflow-hidden
-                    group
-                  "
-                  style={{
-                    background: "rgba(15,23,42,0.7)",
-                    borderColor: "rgba(255,255,255,0.08)",
-                    backdropFilter: "blur(20px)",
-                  }}
-                >
-
-                  {/* HOVER GLOW */}
-
-                  <div
-                    className="
-                      absolute
-                      inset-0
-                      opacity-0
-                      group-hover:opacity-100
-                      transition-all
-                      duration-500
-                    "
-                    style={{
-                      background:
-                        "radial-gradient(circle at top left, rgba(200,169,107,0.15), transparent 60%)",
-                    }}
-                  />
-
-                  {/* ICON */}
-
-                  <div
-                    className="
-                      relative
-                      z-10
-                      w-16
-                      h-16
-                      rounded-2xl
-                      flex
-                      items-center
-                      justify-center
-                      mb-7
-                    "
-                    style={{
-                      background: "rgba(255,255,255,0.06)",
-                      color: "var(--secondary-color)",
-                    }}
-                  >
-
-                    <Icon size={30} />
-
-                  </div>
-
-                  {/* TITLE */}
-
-                  <h3
-                    className="
-                      relative
-                      z-10
-                      text-2xl
-                      font-bold
-                    "
-                    style={{
-                      color: "var(--white-color)",
-                    }}
-                  >
-
-                    {item.title}
-
-                  </h3>
-
-                  {/* DESC */}
-
-                  <p
-                    className="
-                      relative
-                      z-10
-                      mt-5
-                      text-[15px]
-                      leading-8
-                    "
-                    style={{
-                      color: "rgba(255,255,255,0.72)",
-                    }}
-                  >
-
-                    {item.desc}
-
-                  </p>
-
-                </motion.div>
-
-              );
-
-            })
-          }
-
-        </div>
-
       </div>
-
     </section>
-
   );
-
 };
 
 export default AmenitiesSection;

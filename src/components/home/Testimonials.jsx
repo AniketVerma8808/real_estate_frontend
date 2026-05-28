@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -35,33 +34,29 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-
   return (
-
     <section
       className="
         relative
-        py-28
+        py-20
+        md:py-24
         overflow-hidden
       "
       style={{
         background: "var(--primary-color)",
       }}
     >
-
-      {/* ======================
-          BACKGROUND GLOW
-      ====================== */}
+      {/* BACKGROUND GLOW */}
 
       <div
         className="
           absolute
           bottom-0
           left-0
-          w-[320px]
-          h-[320px]
+          w-[280px]
+          h-[280px]
           rounded-full
-          blur-[140px]
+          blur-[130px]
           opacity-20
         "
         style={{
@@ -70,10 +65,7 @@ const Testimonials = () => {
       />
 
       <div className="container-custom relative z-10">
-
-        {/* ======================
-            HEADER
-        ====================== */}
+        {/* HEADER */}
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -82,12 +74,11 @@ const Testimonials = () => {
           transition={{ duration: 0.7 }}
           className="
             text-center
-            max-w-[850px]
+            max-w-[800px]
             mx-auto
-            mb-20
+            mb-16
           "
         >
-
           {/* TAG */}
 
           <div
@@ -99,15 +90,14 @@ const Testimonials = () => {
               py-2
               rounded-full
               border
-              mb-8
+              mb-7
             "
             style={{
-              borderColor: "rgba(255,255,255,0.1)",
+              borderColor: "rgba(255,255,255,0.08)",
+              background: "rgba(255,255,255,0.04)",
               color: "var(--white-color)",
-              background: "rgba(255,255,255,0.03)",
             }}
           >
-
             <span
               className="
                 w-2
@@ -118,17 +108,15 @@ const Testimonials = () => {
                 background: "var(--secondary-color)",
               }}
             />
-
-            Client Testimonials
-
+            Client Reviews
           </div>
 
           {/* TITLE */}
 
           <h2
             className="
-              text-[40px]
-              md:text-[55px]
+              text-[34px]
+              md:text-[50px]
               leading-[1.1]
               font-bold
               tracking-[-2px]
@@ -137,200 +125,217 @@ const Testimonials = () => {
               color: "var(--white-color)",
             }}
           >
-
-            Trusted By Hundreds
-            Of Happy Investors
-
+            Trusted By Plot Buyers
+            <span
+              style={{
+                color: "var(--secondary-color)",
+              }}
+            >
+              {" "}
+              Across India
+            </span>
           </h2>
+
+          {/* RATING */}
+
+          <div
+            className="
+              flex
+              items-center
+              justify-center
+              gap-3
+              mt-6
+            "
+          >
+            <div className="flex gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  size={16}
+                  fill="currentColor"
+                  style={{
+                    color: "var(--secondary-color)",
+                  }}
+                />
+              ))}
+            </div>
+
+            <span
+              className="text-sm"
+              style={{
+                color: "rgba(255,255,255,0.7)",
+              }}
+            >
+              Rated 4.9/5 by 500+ happy clients
+            </span>
+          </div>
 
           {/* DESCRIPTION */}
 
           <p
             className="
-              mt-7
-              text-[16px]
+              mt-6
+              text-[15px]
               leading-8
             "
             style={{
               color: "rgba(255,255,255,0.72)",
             }}
           >
-
-            Hear what our clients say about their investment
-            journey, project quality, and premium township
-            experience with us.
-
+            Real experiences from investors and plot buyers who trusted us for
+            secure investments and premium township developments.
           </p>
-
         </motion.div>
 
-        {/* ======================
-            TESTIMONIAL GRID
-        ====================== */}
+        {/* TESTIMONIALS */}
 
         <div
           className="
             grid
+            md:grid-cols-2
             lg:grid-cols-3
-            gap-8
+            gap-6
           "
         >
+          {testimonials.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: index * 0.1,
+                duration: 0.6,
+              }}
+              whileHover={{
+                y: -8,
+              }}
+              className="
+                relative
+                p-6
+                md:p-7
+                rounded-[28px]
+                border
+                overflow-hidden
+                group
+              "
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                borderColor: "rgba(255,255,255,0.08)",
+                backdropFilter: "blur(20px)",
+              }}
+            >
+              {/* GLOW */}
 
-          {
-            testimonials.map((item, index) => (
-
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.15,
-                  duration: 0.6,
-                }}
-                whileHover={{
-                  y: -10,
-                }}
+              <div
                 className="
-                  relative
-                  p-8
-                  rounded-[32px]
-                  border
-                  overflow-hidden
-                  group
+                  absolute
+                  inset-0
+                  opacity-0
+                  group-hover:opacity-100
+                  transition-all
+                  duration-500
                 "
                 style={{
-                  background: "rgba(255,255,255,0.05)",
-                  borderColor: "rgba(255,255,255,0.08)",
-                  backdropFilter: "blur(20px)",
+                  background:
+                    "radial-gradient(circle at top left, rgba(200,169,107,0.15), transparent 65%)",
+                }}
+              />
+
+              {/* QUOTE ICON */}
+
+              <Quote
+                size={28}
+                className="relative z-10 mb-5"
+                style={{
+                  color: "var(--secondary-color)",
+                }}
+              />
+
+              {/* STARS */}
+
+              <div className="flex gap-1 relative z-10">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    size={16}
+                    fill="currentColor"
+                    style={{
+                      color: "var(--secondary-color)",
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* REVIEW */}
+
+              <p
+                className="
+                  relative
+                  z-10
+                  mt-5
+                  text-[15px]
+                  leading-7
+                "
+                style={{
+                  color: "rgba(255,255,255,0.75)",
                 }}
               >
+                "{item.review}"
+              </p>
 
-                {/* HOVER EFFECT */}
+              {/* USER */}
 
-                <div
+              <div
+                className="
+                  relative
+                  z-10
+                  flex
+                  items-center
+                  gap-4
+                  mt-8
+                "
+              >
+                <img
+                  src={item.image}
+                  alt={item.name}
                   className="
-                    absolute
-                    inset-0
-                    opacity-0
-                    group-hover:opacity-100
-                    transition-all
-                    duration-500
+                    w-14
+                    h-14
+                    rounded-full
+                    object-cover
                   "
-                  style={{
-                    background:
-                      "radial-gradient(circle at top left, rgba(200,169,107,0.18), transparent 60%)",
-                  }}
                 />
 
-                {/* STARS */}
-
-                <div className="flex items-center gap-1 relative z-10">
-
-                  {
-                    [...Array(5)].map((_, i) => (
-
-                      <Star
-                        key={i}
-                        size={18}
-                        fill="currentColor"
-                        style={{
-                          color: "var(--secondary-color)",
-                        }}
-                      />
-
-                    ))
-                  }
-
-                </div>
-
-                {/* REVIEW */}
-
-                <p
-                  className="
-                    relative
-                    z-10
-                    mt-7
-                    text-[15px]
-                    leading-8
-                  "
-                  style={{
-                    color: "rgba(255,255,255,0.75)",
-                  }}
-                >
-
-                  “{item.review}”
-
-                </p>
-
-                {/* USER */}
-
-                <div
-                  className="
-                    relative
-                    z-10
-                    flex
-                    items-center
-                    gap-4
-                    mt-10
-                  "
-                >
-
-                  <img
-                    src={item.image}
-                    alt={item.name}
+                <div>
+                  <h4
                     className="
-                      w-16
-                      h-16
-                      rounded-full
-                      object-cover
+                      text-[18px]
+                      font-semibold
                     "
-                  />
+                    style={{
+                      color: "var(--white-color)",
+                    }}
+                  >
+                    {item.name}
+                  </h4>
 
-                  <div>
-
-                    <h4
-                      className="
-                        text-xl
-                        font-bold
-                      "
-                      style={{
-                        color: "var(--white-color)",
-                      }}
-                    >
-
-                      {item.name}
-
-                    </h4>
-
-                    <p
-                      className="mt-1 text-sm"
-                      style={{
-                        color: "rgba(255,255,255,0.6)",
-                      }}
-                    >
-
-                      {item.role}
-
-                    </p>
-
-                  </div>
-
+                  <p
+                    className="text-sm mt-1"
+                    style={{
+                      color: "rgba(255,255,255,0.6)",
+                    }}
+                  >
+                    {item.role}
+                  </p>
                 </div>
-
-              </motion.div>
-
-            ))
-          }
-
+              </div>
+            </motion.div>
+          ))}
         </div>
-
       </div>
-
     </section>
-
   );
-
 };
 
 export default Testimonials;
