@@ -5,6 +5,7 @@ import MainLayout from "../layouts/MainLayout";
 import About from "../pages/About";
 import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
+import NotFound from "../pages/NotFound";
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,8 @@ const AppRoutes = () => {
           <Route path="/projects" element={<Projects />} />
 
           <Route path="/contact" element={<Contact />} />
+
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
