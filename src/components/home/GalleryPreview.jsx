@@ -246,7 +246,6 @@ const GalleryPreview = () => {
                   background: "var(--secondary-color)",
                 }}
               />
-
               Project Gallery
             </div>
 
@@ -287,9 +286,9 @@ const GalleryPreview = () => {
               color: "rgba(255,255,255,0.72)",
             }}
           >
-            Discover premium plotting projects, township developments,
-            farm lands, and investment-ready opportunities designed for
-            long-term growth.
+            Discover premium plotting projects, township developments, farm
+            lands, and investment-ready opportunities designed for long-term
+            growth.
           </p>
         </motion.div>
 
@@ -298,10 +297,7 @@ const GalleryPreview = () => {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* LARGE */}
 
-          <GalleryCard
-            item={galleryImages[0]}
-            large
-          />
+          <GalleryCard item={galleryImages[0]} large />
 
           {/* RIGHT */}
 
@@ -343,7 +339,6 @@ const GalleryPreview = () => {
               }}
             >
               View Full Gallery
-
               <ArrowUpRight size={20} />
             </motion.button>
           </Link>
