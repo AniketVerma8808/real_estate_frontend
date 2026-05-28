@@ -1,9 +1,8 @@
 import ContactHero from "../components/contact/ContactHero";
 import ContactInfoCards from "../components/contact/ContactInfoCards";
 import ContactFormSection from "../components/contact/ContactFormSection";
-// import ContactMapSection from "../components/contact/ContactMapSection";
-// import ContactFaqSection from "../components/contact/ContactFaqSection";
-// import CTASection from "../components/home/CTASection";
+import CommonCTA from "../components/common/CommonCTA";
+import ContactMapSection from "../components/contact/ContactMapSection";
 
 const Contact = () => {
   return (
@@ -18,11 +17,11 @@ const Contact = () => {
 
       <ContactFormSection />
 
-      {/* <ContactMapSection /> */}
+      <ContactMapSection />
 
       {/* <ContactFaqSection /> */}
 
-      {/* <CTASection /> */}
+      <CommonCTA />
     </div>
   );
 };
